@@ -1,51 +1,80 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YSKAIPE Investor Info</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #4B0082, #8A2BE2);
+            font-family: 'Lato', sans-serif;
+            background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+                radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
+                radial-gradient(2px 2px at 160px 30px, #ddd, transparent);
+            background-repeat: repeat;
+            background-size: 200px 100px;
+            animation: twinkle 20s linear infinite;
+            opacity: 0.1;
+        }
+        @keyframes twinkle {
+            0% { transform: translateY(0px) rotate(0deg); }
+            100% { transform: translateY(-100px) rotate(360deg); }
         }
         .container {
             text-align: center;
             position: relative;
+            z-index: 1;
         }
         .title {
             font-size: 3em;
-            font-weight: bold;
+            font-weight: 700;
             margin-bottom: 0.5em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5), 0 0 20px rgba(255,255,255,0.3);
         }
         .subtitle {
             font-size: 1.5em;
-            font-weight: bold;
+            font-weight: 700;
             margin-bottom: 2em;
             opacity: 0.9;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
         .connect-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
             padding: 2em;
             margin: 2em auto;
             max-width: 500px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
         }
         .connect-title {
             font-size: 2em;
-            font-weight: bold;
+            font-weight: 700;
             margin-bottom: 1.5em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
         .input-group {
             display: flex;
@@ -58,19 +87,14 @@
             padding: 1em;
             border: none;
             border-radius: 10px;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
             color: white;
             font-size: 1em;
             text-align: center;
+            font-family: 'Lato', sans-serif;
         }
         .input-field::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
-        .input-field.email::placeholder {
-            content: "gr@yskaipe.com";
-        }
-        .input-field.phone::placeholder {
-            content: "704-965-1001";
+            color: rgba(255, 255, 255, 0.6);
         }
         .links {
             display: flex;
@@ -83,34 +107,44 @@
             padding: 1em;
             border: none;
             border-radius: 10px;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
             color: white;
             font-size: 0.9em;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: all 0.3s;
+            font-family: 'Lato', sans-serif;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
         .link-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 15px rgba(255,255,255,0.1);
+            transform: translateY(-2px);
         }
         .questions-btn {
-            background: #9370DB;
+            background: linear-gradient(135deg, #A9A9A9, #C0C0C0);
             border: none;
             padding: 1em 2em;
             border-radius: 10px;
-            color: white;
+            color: #333;
             font-size: 1.2em;
-            font-weight: bold;
+            font-weight: 700;
             cursor: pointer;
             margin: 2em 0;
-            transition: background 0.3s;
+            transition: all 0.3s;
+            font-family: 'Lato', sans-serif;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3), 0 0 20px rgba(192, 192, 192, 0.5);
         }
         .questions-btn:hover {
-            background: #7B68EE;
+            background: linear-gradient(135deg, #B8B8B8, #D3D3D3);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4), 0 0 30px rgba(192, 192, 192, 0.7);
         }
         .thank-you {
             font-size: 1.5em;
-            font-weight: bold;
+            font-weight: 700;
             opacity: 0.8;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
         .icon {
             margin-right: 0.5em;
@@ -121,28 +155,30 @@
     <div class="container">
         <div class="title">Ready to YSKAIPE together?</div>
         <div class="subtitle">Are WE ready to YSKAIPE together?</div>
-        
+       
         <div class="connect-card">
             <div class="connect-title">Let's Connect</div>
             <div class="input-group">
                 <input type="email" class="input-field email" placeholder="gr@yskaipe.com">
                 <input type="tel" class="input-field phone" placeholder="704-965-1001">
             </div>
-            <div class="links">
-                <button class="link-btn">
-                    <span class="icon">📁</span>Figma Pitch Deck
-                </button>
-                <button class="link-btn">
-                    <span class="icon">🖥️</span>Figma Prototype
-                </button>
-                <button class="link-btn">
-                    <span class="icon">📂</span>GitHub Repo
-                </button>
-            </div>
+
+<div class="links">
+    <a href="https://lance-strata-47637953.figma.site" class="link-btn" target="_blank">
+        <span class="icon">📁</span>Figma Pitch Deck
+    </a>
+    <a href="https://plaza-cipher-84439491.figma.site/" class="link-btn" target="_blank">
+        <span class="icon">🖥️</span>Figma Prototype
+    </a>
+    <a href="https://github.com/YSKAIPE" class="link-btn" target="_blank">
+        <span class="icon">📂</span>GitHub Repo
+    </a>
+</div>
         </div>
-        
+       
         <button class="questions-btn">Questions?</button>
         <div class="thank-you">THANK YOU</div>
     </div>
 </body>
 </html>
+```
