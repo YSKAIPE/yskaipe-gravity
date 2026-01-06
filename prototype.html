@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype - Yskaipe</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f5f5f5;
+            overflow: hidden;
+        }
+        
+        header {
+            background: #fff;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+        
+        h1 {
+            color: #333;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .prototype-container {
+            width: 100%;
+            height: calc(100vh - 70px);
+            position: relative;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: #666;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .placeholder h2 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .placeholder p {
+            max-width: 600px;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .placeholder code {
+            background: #e8e8e8;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Yskaipe Prototype</h1>
+    </header>
+    
+    <div class="prototype-container">
+        <!-- Replace the URL below with your Figma prototype link -->
+        <!-- 
+        To get your Figma embed link:
+        1. Open your Figma file
+        2. Click the Share button (top right)
+        3. Click "Get embed code"
+        4. Copy the URL from the iframe src
+        5. Replace the src below with your URL
+        -->
+        
+        <div class="placeholder">
+            <h2>📐 Figma Prototype Embed</h2>
+            <p>To display your prototype, replace the iframe <code>src</code> attribute with your Figma prototype link.</p>
+            <p><strong>Steps:</strong></p>
+            <ol style="text-align: left; max-width: 500px; line-height: 1.8;">
+                <li>Open your Figma file</li>
+                <li>Click the <strong>Share</strong> button (top right)</li>
+                <li>Select <strong>"Get embed code"</strong></li>
+                <li>Copy the URL from the iframe src</li>
+                <li>Paste it in the iframe below (line 73)</li>
+            </ol>
+        </div>
+        
+        <!-- Uncomment and add your Figma URL below -->
+        <!-- <iframe src="YOUR_FIGMA_PROTOTYPE_URL_HERE" allowfullscreen></iframe> -->
+    </div>
+</body>
+</html>
