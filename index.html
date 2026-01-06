@@ -5,101 +5,202 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>YSKAIPE - AI-Orchestrated Journeys</title>
         <style>
+            @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap');
+            
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
             
             body {
-        font-family: Lato, sans-serif; /* Optional: Consistent font */
-        max-width: 1200px; /* Limits content width for readability (adjust as needed) */
-        margin: 0 auto; /* Centers the content horizontally */
-        padding: 0 20px; /* Adds 20px space on left/right sides (adjust padding value) */
-    }
-    #team {
-        padding: 20px; /* Extra padding just for the team section if needed */
-    }
-    .team-member {
-        border: 1px solid #ddd;
-        padding: 10px;
-        margin: 10px 0;
-    }
+                font-family: 'Cinzel', serif;
+                background: #0a0a0a;
+                color: #e8f4f8;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+                text-shadow: 0 0 10px rgba(232, 244, 248, 0.5);
+            }
+            
+            .divider {
+                height: 2px;
+                background: linear-gradient(90deg, 
+                    transparent 0%, 
+                    #e8f4f8 20%, 
+                    #e8f4f8 50%, 
+                    #e8f4f8 80%, 
+                    transparent 100%);
+                margin: 40px 0;
+                box-shadow: 0 0 15px rgba(232, 244, 248, 0.6);
+            }
+            
             header {
                 text-align: center;
                 padding: 60px 0;
-                background: linear-gradient(135deg, #001f3f 0%, #0074d9 100%);
+                background: #0a0a0a;
             }
+            
             h1 {
-                font-size: 3em;
+                font-size: 3.5em;
                 margin: 0;
-                color: #fff;
+                color: #e8f4f8;
+                font-weight: 700;
+                letter-spacing: 4px;
+                text-shadow: 0 0 20px rgba(232, 244, 248, 0.8);
             }
+            
+            h2 {
+                font-size: 2.5em;
+                color: #e8f4f8;
+                font-weight: 600;
+                text-align: center;
+                margin-bottom: 30px;
+                text-shadow: 0 0 15px rgba(232, 244, 248, 0.7);
+            }
+            
             .tagline {
                 font-size: 1.5em;
                 margin: 10px 0 30px;
-                opacity: 0.9;
+                color: #e8f4f8;
+                font-weight: 400;
+                text-shadow: 0 0 12px rgba(232, 244, 248, 0.6);
             }
+            
             .gist {
                 text-align: center;
                 padding: 40px 0;
-                border-bottom: 1px solid #333;
             }
+            
             .gist p {
                 font-size: 1.2em;
-                max-width: 600px;
+                max-width: 800px;
+                margin: 0 auto 20px;
+                line-height: 1.8;
+                color: #e8f4f8;
+            }
+            
+            .gist strong {
+                font-weight: 700;
+                color: #fff;
+                text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            }
+            
+            .gist em {
+                font-style: italic;
+                color: #d0e8f0;
+            }
+            
+            .content-box {
+                background: rgba(20, 20, 20, 0.6);
+                padding: 40px;
+                border-radius: 10px;
+                border: 1px solid rgba(232, 244, 248, 0.2);
+                box-shadow: 0 0 30px rgba(232, 244, 248, 0.1);
+                max-width: 800px;
                 margin: 0 auto;
             }
+            
+            .highlight-box {
+                background: rgba(30, 30, 30, 0.8);
+                border-left: 4px solid #e8f4f8;
+                padding: 20px;
+                margin: 30px 0;
+                border-radius: 0 8px 8px 0;
+                box-shadow: -4px 0 20px rgba(232, 244, 248, 0.3);
+            }
+            
             .video-container {
                 margin: 20px auto;
                 max-width: 560px;
             }
+            
             .waitlist {
-                background: #111;
+                background: #0a0a0a;
                 padding: 40px 0;
                 text-align: center;
             }
+            
             .waitlist form {
                 display: flex;
                 flex-direction: column;
                 max-width: 400px;
                 margin: 20px auto;
             }
+            
             input {
                 padding: 15px;
                 margin: 10px 0;
-                border: 1px solid #0074d9;
+                border: 2px solid #e8f4f8;
                 border-radius: 5px;
-                background: #222;
-                color: #fff;
+                background: rgba(20, 20, 20, 0.9);
+                color: #e8f4f8;
                 font-size: 1em;
+                font-family: 'Cinzel', serif;
+                box-shadow: 0 0 10px rgba(232, 244, 248, 0.3);
             }
+            
+            input:focus {
+                outline: none;
+                box-shadow: 0 0 20px rgba(232, 244, 248, 0.6);
+            }
+            
             button {
                 padding: 15px;
                 margin: 10px 0;
-                background: #0074d9;
-                border: none;
+                background: rgba(232, 244, 248, 0.2);
+                border: 2px solid #e8f4f8;
                 border-radius: 5px;
-                color: #fff;
+                color: #e8f4f8;
                 font-size: 1em;
+                font-family: 'Cinzel', serif;
+                font-weight: 600;
                 cursor: pointer;
+                text-shadow: 0 0 10px rgba(232, 244, 248, 0.8);
+                box-shadow: 0 0 15px rgba(232, 244, 248, 0.3);
+                transition: all 0.3s ease;
             }
+            
             button:hover {
-                background: #0056b3;
+                background: rgba(232, 244, 248, 0.3);
+                box-shadow: 0 0 25px rgba(232, 244, 248, 0.6);
             }
+            
             .investor {
-                background: #001f3f;
+                background: #0a0a0a;
                 padding: 40px 0;
                 text-align: center;
             }
+            
             .investor a {
-                color: #0074d9;
+                color: #e8f4f8;
                 text-decoration: none;
-                font-weight: bold;
+                font-weight: 700;
+                text-shadow: 0 0 10px rgba(232, 244, 248, 0.6);
             }
+            
             .investor a:hover {
                 text-decoration: underline;
+                text-shadow: 0 0 20px rgba(232, 244, 248, 0.9);
             }
+            
             footer {
                 text-align: center;
                 padding: 20px;
                 font-size: 0.9em;
-                opacity: 0.7;
+                color: #a0c0d0;
+            }
+            
+            #team {
+                padding: 20px;
+            }
+            
+            .team-member {
+                border: 1px solid rgba(232, 244, 248, 0.3);
+                padding: 10px;
+                margin: 10px 0;
+                background: rgba(20, 20, 20, 0.5);
+                border-radius: 5px;
             }
         </style>
     </head>
@@ -113,158 +214,55 @@
                 <p>The Journey is the Reward</p>
             </div>
         </header>
+        
+        <div class="divider"></div>
+        
         <section class="gist">
             <div class="container">
-
-
-
-                
-<div style="font-family: 'Futura', sans-serif; max-width: 800px; margin: 0 auto; line-height: 1.6; color: #333; background: linear-gradient(to bottom, #f9f9f9, #fff); padding: 40px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-<h2 style="font-family: 'Futura', sans-serif; text-align: center; color: "black"; font-size: 2.5em; margin-bottom: 30px;">What We’re Building</h2>
-<p style="font-size: 1.1em; margin-bottom: 20px;">
-YSKAIPE (prounounced "ESCAPE") is the <em>first participation platform</em> that doesn’t give you a feed — it gives you <strong>the right people</strong>.
-</p>
-<p style="font-style: 0; text-align: center; font-size: 1.2em; margin: 30px 0; color: #718096;">
-Netflix designed an epic menu for watching.<br>
-We designed an epic menu for <span style="color: #e53e3e;">“The Journey”</span>.
-</p>
-<div style="background: #fff; border-left: 4px solid #4299e1; padding: 20px; margin: 30px 0; border-radius: 0 8px 8px 0;">
-<p style="margin: 0; font-size: 1.05em;">
-The YSKAIPE algorithms use <strong>ATTITUDES and INTERESTS</strong> for fast, purposeful MATCHING into small,
-    live circles (called “<span style="color: #4299e1;">YSKAIPE Pods</span>”) each managed by an AI-Agent-Expert.
-</p>
-</div>
-
-
-    
-                    
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0;">
-<div style="background: #edf2f7; padding: 15px; border-radius: 8px; text-align: center;">
-<p style="margin: 0; font-weight: bold; color: #2d3748;">One YSKAIPE Pod ("Space-AIPES")</p>
-<p style="font-size: 0.95em; margin-top: 10px;">...are up at 3 a.m. sketching orbital colonies on a shared whiteboard.</p>
-</div>
-<div style="background: #edf2f7; padding: 15px; border-radius: 8px; text-align: center;">
-<p style="margin: 0; font-weight: bold; color: #2d3748;">While another Pod ("Flour-Power")</p>
-<p style="font-size: 0.95em; margin-top: 10px;">meets Sunday mornings on a round-robin basis making bagels, trading sourdough starters, and enjoying breakfast together.</p>
-</div>
-</div>
-
-                    
-<p style="text-align: center; font-size: 1.1em; margin: 20px 0; color: #718096;">
-<strong>Neither is better.</strong> They’re just <em>different frequencies</em>.<br>
-YSKAIPE makes suggestive matching <span style="color: #38a169;">based on YOUR CHOICES</span>.
-</p>
-
-<blockquote style="border-right: 4px solid #4299e1; padding-right: 20px; margin: 30px 0; font-style: 0; color: #4a5568; font-size: 1.05em;">
-The algorithm never judges — it simply considers which flavors might belong together and which ones might clash. 
-</blockquote>
-
-<p style="font-size: 1.1em; margin: 25px 0;">
-YSKAIPE Pods <strong>auto-match</strong>, <strong>auto-manage</strong>, and <strong>auto-evolve</strong> tiny groups (5–12 people) around shared missions, curiosities, or ways of being. The group lives as long as it’s alive; when the spark fades, we gently dissolve and re-match. No ghosting, no awkward goodbyes — just <em>new journeys</em>.
-</p>
-
-<p style="text-align: center; font-size: 1.3em; margin: 40px 0; color: #2d3748; font-weight: bold; font-style: 0;">
-The journey <em>IS</em> the reward.
-</p>
-
-<div style="text-align: center; margin: 40px 0;">
-<a href="https://yskaipe.com" style="display: inline-block; background: linear-gradient(45deg, #4299e1, #3182ce); color: white; padding: 12px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1em; box-shadow: 0 4px 15px rgba(66, 153, 225, 0.3); transition: transform 0.2s;">YSKAIPE/HOME</a>
-</div>
-
-<p style="text-align: center; font-size: 1em; color: #718096; margin-top: 30px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
-For EARLY BIRDS (BETA) and INVESTORS who believe the future of social isn’t bigger networks, but <strong>BETTER CIRCLES</strong>.
-</p>
-
-</div>
-
-
-
-
-                
-
-                
-<div class="video-container">
-                   <iframe
-    width="560"
-    height="315"
-    src="https://youtube.com/embed/C31VZutEoxg" 
-    title="Intro to YSKAIPE"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    referrerpolicy="strict-origin-when-cross-origin"
-    allowfullscreen
-></iframe>
-    </div>
-
-                
-                <p>
-                    <em>An INVITATION to YSKAIPE</em>
-                </p>
+                <div class="content-box">
+                    <h2>What We're Building</h2>
+                    <p>
+                        YSKAIPE (pronounced "ESCAPE") is the <em>first participation platform</em> that doesn't give you a feed — it gives you <strong>the right people</strong>.
+                    </p>
+                    <p style="font-size: 1.2em; margin: 30px 0;">
+                        Netflix designed an epic menu for watching.<br>
+                        We designed an epic menu for <strong>"The Journey"</strong>.
+                    </p>
+                    <div class="highlight-box">
+                        <p style="margin: 0; font-size: 1.05em;">
+                            The YSKAIPE algorithms use <strong>ATTITUDES and INTERESTS</strong> for fast, purposeful MATCHING into small groups.
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
-
-
+        
+        <div class="divider"></div>
+        
         <section class="waitlist">
-        <div class="container">
-            <h2>Join the Waitlist</h2>
-            <p>Be first to escape. Early access + pod invites.</p>
-            <form action="https://script.google.com/macros/s/AKfycbyNwlvkM-JMdjE-gam2XX4R3Q1YNX-876LsZ_Fic5LS8FXUH86DSfHI6CTztkstyoU3/exec" method="POST"> <!-- Replace with your Formspree/ similar endpoint -->
-                <input type="email" name="email" placeholder="Your email" required>
-                <button type="submit">Sign Up</button>
-            </form>
-        </div>
-    </section>
-
-        <section id="team">
-    <h2>Our Team</h2>
-    <p>YSKAIPE is built by a small, dedicated group passionate about AI-orchestrated human-centered development in the modern work era.</p>
-    <div class="team-member">
-        <h3>[Your Name/Founder 1]</h3>
-        <p>Role: CEO & AI Orchestrator. Background: [Brief bio, e.g., "5+ years in AI development at [company], focused on human-AI collaboration. Previously built [project] with [traction metric]."]</p>
-    </div>
-    <div class="team-member">
-        <h3>[Co-Founder Name]</h3>
-        <p>Role: CTO. Background: [Brief bio, e.g., "Expert in scalable matching algorithms; led engineering at [startup], scaling to 10k users."]</p>
-    </div>
-    <!-- Add more as needed -->
-    <p>We're bootstrapping this in the pre-space era, drawing from post-Covid insights on meaningful connections.</p>
-</section>
-
-
+            <div class="container">
+                <h2>Join the Waitlist</h2>
+                <form>
+                    <input type="text" placeholder="Your Name" required />
+                    <input type="email" placeholder="Your Email" required />
+                    <button type="submit">Reserve Your Spot</button>
+                </form>
+            </div>
+        </section>
+        
+        <div class="divider"></div>
         
         <section class="investor">
             <div class="container">
                 <h2>For Investors</h2>
-                <p>
-                    Targeting $1M Pre-Seed. $150B experience economy play. Request
-                    Figma DEMO & PITCH DECK:
-                </p>
-                <form
-                    action="https://script.google.com/macros/s/AKfycbwJZpcSQYMCFyc76tK529RG99jOoaoFUoZI-elpgupMrzRAA7qH14nCWADLIb9fE9zj/exec"
-                    method="POST"
-                >
-                    <!-- Replace with your endpoint -->
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Investor email"
-                        required
-                    />
-                    <button type="submit">Request Access</button>
-                </form>
-                <p>
-                    <a href="mailto:gr8@yskaipe.com?subject=Pitch+Request"
-                        >Or email us</a
-                    >
-                </p>
+                <p>Interested in learning more? <a href="mailto:invest@yskaipe.com">Get in touch</a></p>
             </div>
         </section>
+        
+        <div class="divider"></div>
+        
         <footer>
-            <div class="container">
-                <p><a href="blog.html">Visit Our Blog for Insights on Modern Work & AI</a></p>
-                <p>&copy; 2025 YSKAIPE. Built for dreamers. Dec 09, 2025.</p>
-            </div>
+            <p>&copy; 2024 YSKAIPE. All rights reserved.</p>
         </footer>
     </body>
 </html>
-
