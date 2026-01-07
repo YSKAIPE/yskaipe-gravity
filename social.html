@@ -4,33 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YSKAIPE Social Links</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background-color: #f4f4f4;
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
         }
-        h1, h2 {
-            color: #333;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin: 20px 0;
-        }
-        a {
-            text-decoration: none;
-            color: #007bff;
-            font-size: 18px;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        p {
-            color: #666;
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
         }
         form {
             max-width: 400px;
@@ -62,28 +48,23 @@
     </style>
 </head>
 <body>
-    <h1>YSKAIPE Social Media Links</h1>
-    <p>Connect with YSKAIPE (pronounced "escape" — nothing to do with Skype!) on our social platforms:</p>
-    <ul>
-        <li><a href="https://www.linkedin.com/company/yskaipe" target="_blank">LinkedIn</a></li>
-        <li><a href="https://x.com/yskaipe" target="_blank">X.com</a></li>
-        <li><a href="https://www.youtube.com/@yskaipe-artists" target="_blank">YouTube</a></li>
-    </ul>
-    <p>Check out our GitHub repository: <a href="https://github.com/yskaipe/yskaipe-gravity" target="_blank">yskaipe-gravity</a></p>
+    <article class="markdown-body">
+        <h1>YSKAIPE Social Media Links</h1>
+        <p>Connect with YSKAIPE (pronounced "escape" — nothing to do with Skype!) on our social platforms:</p>
+        <ul>
+            <li><a href="https://www.linkedin.com/company/yskaipe" target="_blank">LinkedIn</a></li>
+            <li><a href="https://x.com/yskaipe" target="_blank">X.com</a></li>
+            <li><a href="https://www.youtube.com/@yskaipe-artists" target="_blank">YouTube</a></li>
+        </ul>
+        <p>Check out our GitHub repository: <a href="https://github.com/yskaipe/yskaipe-gravity" target="_blank">yskaipe-gravity</a></p>
 
-    <h2>Contact Us</h2>
-    <p>If you have any questions or inquiries, feel free to reach out via the form below or email us at <a href="mailto:invest@yskaipe.com">invest@yskaipe.com</a>.</p>
-    <form action="mailto:invest@yskaipe.com" method="post" enctype="text/plain">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+        <h2>Contact Us</h2>
+        <p>If you have any questions or inquiries, feel free to reach out via the form below or email us at <a href="mailto:invest@yskaipe.com">invest@yskaipe.com</a>.</p>
+        <form action="mailto:invest@yskaipe.com" method="post" enctype="text/plain">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-
-        <button type="submit">Send Message</button>
-    </form>
-</body>
-</html>
+            <label for="message">Message:</label
